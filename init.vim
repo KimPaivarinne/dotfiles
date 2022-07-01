@@ -29,6 +29,7 @@ nnoremap <silent> <A-Right> :tabm +1<CR>
 call plug#begin()
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'romgrk/doom-one.vim'
 Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
