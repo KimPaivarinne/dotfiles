@@ -33,6 +33,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'romgrk/doom-one.vim'
 Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 colorscheme onenord
@@ -43,3 +44,16 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+
+
+" coc
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
